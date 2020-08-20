@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import PropType from "prop-types"
 import {
   useTheme,
@@ -35,7 +35,7 @@ const withFormDialog = (Component) => {
     }
 
     return (
-      <>
+      <Fragment>
         <Dialog
           open={open}
           onClose={onClose}
@@ -77,7 +77,7 @@ const withFormDialog = (Component) => {
             <Component formId='dialogForm' onSubmit={handleSubmit} {...props} />
           </DialogContent>
         </Dialog>
-      </>
+      </Fragment>
     )
   }
   return WithDialog
