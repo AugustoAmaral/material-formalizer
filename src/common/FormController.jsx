@@ -25,13 +25,19 @@ const FormController = ({ fields, initialValues, onSubmit, ...props }) => {
 
 export default FormController;
 
+FormController.defaultProps = {
+  fields: [],
+};
+
 FormController.propTypes = {
-  name: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    required: PropTypes.bool,
-    focus: PropTypes.bool,
-  }).isRequired,
+  fields: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      required: PropTypes.bool,
+      focus: PropTypes.bool,
+    }).isRequired
+  ),
   onSubmit: PropTypes.func.isRequired,
 };

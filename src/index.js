@@ -1,3 +1,3 @@
-import DialogForm from "./dialogForm"
+import DialogForm from "./dialogForm";
 
-export { DialogForm }
+export { DialogForm };

@@ -1,36 +1,33 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
+import InlineField from "./fields/InlineField";
 
-const Form = ({
-  formId,
-  handleSubmit,
-  handleBlur,
-  handleChange,
-  isSubmitting,
-  fields,
-  values,
-  errors,
-}) => {
+const Form = ({ formId, handleSubmit, fields, ...props }) => {
   return (
     <form id={formId} onSubmit={handleSubmit} noValidate>
-      {fields.map((field, key) => (
-        <TextField
-          key={key}
-          margin="normal"
-          name={field.name}
-          label={field.label || field.name}
-          variant="filled"
-          value={values[field.name]}
-          helperText={errors[field.name]}
-          error={Boolean(errors[field.name])}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          disabled={isSubmitting}
-          required={field.required}
-          autoFocus={values[field.focus]}
-          fullWidth
-        />
-      ))}
+      {fields.map((field, key) => {
+        switch (field.type) {
+          case "text":
+            return (
+              <InlineField key={key} field={field} type="text" {...props} />
+            );
+          case "number":
+            return (
+              <InlineField key={key} field={field} type="number" {...props} />
+            );
+          case "textfield":
+            return (
+              <InlineField
+                key={key}
+                field={field}
+                type="text"
+                multiline
+                {...props}
+              />
+            );
+          default:
+            return <InlineField key={key} field={field} {...props} />;
+        }
+      })}
     </form>
   );
 };
