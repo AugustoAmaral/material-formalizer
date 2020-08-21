@@ -7,19 +7,21 @@
 
 ### Supported props
 
-| Props    | Description               |
-| -------- | ------------------------- |
-| name     | HTML Field name           |
-| type     | Field type*               |
-| label    | Field label               |
-| required | force required validation |
-| focus    | Focused field             |
+| Props    | Description                               |
+| -------- | ----------------------------------------- |
+| name     | HTML Field name                           |
+| type     | Field type*                               |
+| label    | Field label                               |
+| required | force required validation                 |
+| focus    | Focused field                             |
+| options  | Required when type is select / autoselect |
 
 | Fieldtypes* | Description       |
 | ----------- | ----------------- |
 | text        | Simple text field |
 | number      | number field type |
 | textfield   | textfield type    |
+| Select      | select field type |
 
 ## More instrutions coming soon
 --

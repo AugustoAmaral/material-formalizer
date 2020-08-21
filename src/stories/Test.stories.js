@@ -74,3 +74,59 @@ storiesOf("With dialog", module).add("with fields and initial values", () => {
     </div>
   );
 });
+
+storiesOf("With dialog", module).add("with select field", () => {
+  const [open, setOpen] = useState(false);
+  const newFields = [
+    ...fields,
+    {
+      name: "country",
+      type: "select",
+      label: "Country",
+      required: true,
+      options: [
+        ["brazil", "Brasil"],
+        ["norway", "Noruega"],
+        ["netherlands", "Terras Infernais"],
+      ],
+    },
+    {
+      name: "state",
+      type: "select",
+      label: "State",
+      required: true,
+      options: [
+        { name: "RJ", label: "Rio de Janeiro" },
+        { name: "ES", label: "Espirito Santo" },
+        { name: "AM", label: "Amazonas" },
+      ],
+    },
+    {
+      name: "random",
+      type: "select",
+      label: "Random",
+      required: true,
+      options: [
+        { name: "Hi" },
+        { name: "test", label: "TESTE" },
+        ["sample"],
+        ["withCaptalized", "Captalized"],
+      ],
+    },
+  ];
+
+  const handleToggleDialog = () => setOpen((s) => !s);
+  return (
+    <div>
+      <button onClick={handleToggleDialog}>Open Form</button>
+      <DialogForm
+        fields={newFields}
+        open={open}
+        onClose={handleToggleDialog}
+        onSubmit={(e) => console.log(e)}
+        saveText="Save"
+        title="A new form"
+      />
+    </div>
+  );
+});
