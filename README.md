@@ -1,29 +1,13 @@
 # formalizer
 
-> Made with create-react-library
+> This is being developed to learn a little bit more about packages and private repositories
+> The package try to make the forms a little bit more easy
 
 [![NPM](https://img.shields.io/npm/v/formalizer.svg)](https://www.npmjs.com/package/formalizer) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## More instrutions coming soon
+--
 
-```bash
-npm install --save formalizer
-```
-
-## Usage
-
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'formalizer'
-import 'formalizer/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
-```
 
 ## License
 
