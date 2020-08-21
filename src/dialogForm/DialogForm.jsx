@@ -1,8 +1,9 @@
-import React from "react"
-import withFormDialog from "./withFormDialog"
+import React from "react";
+import withFormDialog from "./withFormDialog";
+import FormController from "../common/FormController";
 
-const DialogForm = () => {
-  return <div>Sample Form</div>
-}
+const DialogForm = ({ ...props }) => {
+  return <FormController {...props} />;
+};
 
-export default withFormDialog(DialogForm)
+export default withFormDialog(DialogForm);
